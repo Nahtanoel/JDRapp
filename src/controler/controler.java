@@ -12,7 +12,7 @@ public class controler {
         this.view = new view();
     }
 
-    public handleActions(ActionEvent paramActionEvent){
+    public void handleActions(ActionEvent paramActionEvent){
         System.out.println("action quelquonque" + paramActionEvent);
     }
 }
