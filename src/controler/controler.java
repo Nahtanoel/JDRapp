@@ -11,4 +11,8 @@ public class controler {
         this.model = new model();
         this.view = new view();
     }
+
+    public handleActions(ActionEvent paramActionEvent){
+        System.out.println("action quelquonque" + paramActionEvent);
+    }
 }
