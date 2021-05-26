@@ -20,6 +20,9 @@ public class View extends JFrame {
 
         ArrayList<ModuleFrame> modules = new ArrayList<ModuleFrame>();
         modules.add(new CompteurFrame("PV",al,1));
+        modules.add(new CompteurFrame("Mana",al,2));
+        modules.add(new CompteurFrame("atk",al,3));
+        modules.add(new CompteurFrame("def",al,4));
         principal = new MainView(modules,al);
         menu = new MenuView();
         add(principal);
@@ -37,9 +40,7 @@ public class View extends JFrame {
         this.menu.setVisible(true);
         this.repaint();
     }
-    public void augementer(){
-    }
-    public void decrease(){
-
+    public void setValue(CompteurFrame frame, int value){
+        frame.setValue(value);
     }
 }

@@ -19,8 +19,8 @@ public class MainView extends JPanel {
 
     public MainView(ArrayList<ModuleFrame> modules,actionListener al){
         this.al=al;
-        this.initialiseComponents();
         this.modules = modules;
+        this.initialiseComponents();
     }
     public void initialiseComponents(){
         d4= new JButton("4");
@@ -36,8 +36,11 @@ public class MainView extends JPanel {
         ImageIcon menuIcon = new ImageIcon(/*this.getClass().getResource("menu.png")*/);
         menu = new JButton("menu",menuIcon);
         JPanel haut = new JPanel();
-        haut.setLayout(new BorderLayout());
+        haut.setLayout(new GridLayout(1,4,10,0));
         haut.add(menu,BorderLayout.WEST);
+        haut.add(new JLabel(" "));
+        haut.add(new JLabel(" "));
+        haut.add(new JLabel(" "));
         
         JPanel d = new JPanel();
         JPanel des = new JPanel();
@@ -52,17 +55,21 @@ public class MainView extends JPanel {
         d.setLayout(new GridLayout(2,1,0,5));
         d.add(des);
         d.add(resul);
-
         module.setLayout(new GridLayout(2,5,0,5));
-        //for (ModuleFrame moduleFrame : modules) {
-        //    module.add(moduleFrame);
-        //}
+        for (ModuleFrame moduleFrame : modules) {
+            module.add(moduleFrame);
+        }
+        
+        JPanel center = new JPanel();
+        center.setLayout(new BorderLayout());
+        center.add(d,BorderLayout.NORTH);
+        center.add(module,BorderLayout.CENTER);
+
+        
 
         this.setLayout(new BorderLayout());
         this.add(haut,BorderLayout.NORTH);
-        this.add(d,BorderLayout.CENTER);
-        this.add(module,BorderLayout.SOUTH);
-        System.out.println("e");
+        this.add(center,BorderLayout.CENTER);
 
 
     }
@@ -72,7 +79,7 @@ public class MainView extends JPanel {
             this.repaint();
         }
     }
-    public void setValue(ModuleFrame frame, int x){
+    public void setValue(CompteurFrame frame, int x){
         frame.setValue(x);
     }
 }

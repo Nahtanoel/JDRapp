@@ -6,32 +6,31 @@ import model.compteur;
 
 import java.awt.*;
 public class CompteurFrame extends ModuleFrame {
-    private compteur compt;
     private JPanel compteur;
     private JButton gauche;
     private JButton droite;
     private JLabel value;
     private JLabel nom;
     private actionListener al;
+    private int id;
 
-    public CompteurFrame(String nom,actionListener al,int id){
+    public CompteurFrame(String nom, actionListener al,int id){
         super();
-        this.compt=new compteur(nom);
+        this.id = id;
         this.compteur = new JPanel();
         this.gauche=new JButton("gauche");
         gauche.addActionListener(al);
         this.droite = new JButton("droite");
-        gauche.addActionListener(al);
+        droite.addActionListener(al);
         this.nom=new JLabel(nom);
-        this.value=new JLabel((Integer.toString(compt.getValeur())));
-        
+        this.value=new JLabel("0");
         
         this.compteur.setLayout(new BorderLayout());
         this.compteur.add(this.value,BorderLayout.CENTER);
         this.compteur.add(this.gauche,BorderLayout.WEST);
-        this.compteur.add(this.droite,BorderLayout.WEST);
+        this.compteur.add(this.droite,BorderLayout.EAST);
         this.compteur.add(this.nom,BorderLayout.NORTH);
-
+        add(this.compteur);
     }
 
     public void setValue(int x){

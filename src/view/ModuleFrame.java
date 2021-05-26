@@ -5,6 +5,4 @@ public abstract class ModuleFrame extends JPanel {
     private int id;
     public ModuleFrame(){
     }
-
-    public void setValue(int x){}
 }

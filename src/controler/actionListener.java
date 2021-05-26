@@ -51,13 +51,16 @@ public class actionListener implements ActionListener {
             controler.changeResultat("resultat :"+numeroChoisi);
         }
         else if(paramActionEvent.getActionCommand().equals("menu")){
-            controler.afficheMenu();
+            //controler.afficheMenu();
+            System.out.println("menu");
         }
         else if(paramActionEvent.getActionCommand().equals("gauche")){
-            controler.augementer((ModuleFrame) paramActionEvent.getSource());
+            //controler.augementer((ModuleFrame) paramActionEvent.getSource());
+            System.out.println("-");
         }
         else if(paramActionEvent.getActionCommand().equals("droite")){
-            controler.afficheMenu();
+            //controler.afficheMenu();
+            System.out.println("+");
         }
     }
 }
