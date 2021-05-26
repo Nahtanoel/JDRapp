@@ -18,6 +18,7 @@ public class View extends JFrame {
         principal = new MainView(modules);
         menu = new MenuView();
         add(principal);
+        pack();
         //add(menu);
         //menu.setVisible(false);
         principal.setVisible(true);

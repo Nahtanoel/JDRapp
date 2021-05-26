@@ -20,26 +20,23 @@ public class MainView extends JPanel {
         this.modules = modules;
     }
     public void initialiseComponents(){
-        JLabel vide = new JLabel(" ");
-        d4= new JButton(" 4 ");
-        d6= new JButton(" 6 ");
-        d10= new JButton(" 10 ");
-        d20= new JButton(" 20 ");
+        d4= new JButton("4");
+        d6= new JButton("6");
+        d10= new JButton("10");
+        d20= new JButton("20");
         resultat = new JLabel(" resultat = ");
 
-        ImageIcon menuIcon = new ImageIcon("../../data/image/menu.png");
-        menu = new JButton(menuIcon);
+        ImageIcon menuIcon = new ImageIcon("../data/image/menu.png");
+        menu = new JButton("menu",menuIcon);
         JPanel haut = new JPanel();
-        haut.setLayout(new GridLayout(1,3,20,0));
-        haut.add(menu);
-        haut.add(vide);
-        haut.add(vide);
-
+        haut.setLayout(new BorderLayout());
+        haut.add(menu,BorderLayout.WEST);
+        
         JPanel d = new JPanel();
         JPanel des = new JPanel();
         JPanel resul = new JPanel();
         JPanel module = new JPanel();
-        des.setLayout(new GridLayout(1,4,20,0));
+        des.setLayout(new GridLayout(1,4,10,0));
         des.add(d4);
         des.add(d6);
         des.add(d10);
@@ -54,11 +51,11 @@ public class MainView extends JPanel {
         //    module.add(moduleFrame);
         //}
 
-        setLayout(new GridLayout(3,1,0,20));
-        add(haut);
-        add(d);
-        add(module);
-        
+        this.setLayout(new BorderLayout());
+        this.add(haut,BorderLayout.NORTH);
+        this.add(d,BorderLayout.CENTER);
+        this.add(module,BorderLayout.SOUTH);
+        System.out.println("e");
 
 
     }

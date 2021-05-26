@@ -3,7 +3,7 @@ package controler;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class actionListener extends ActionListener {
+public class actionListener implements ActionListener {
     public controler controler;
 
     public actionListener(controler controler){
@@ -11,6 +11,6 @@ public class actionListener extends ActionListener {
     }
 
     public void actionPerformed(ActionEvent paramActionEvent){
-        this.controler.handleActions(paramActionEvent);
+
     }
 }

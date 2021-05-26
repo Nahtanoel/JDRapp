@@ -12,7 +12,6 @@ public class appLauncher {
             public void run() {
                 View frame = new View();
                 frame.pack();
-                frame.setSize(500, 500);
                 frame.setVisible(true);
             }
         });
