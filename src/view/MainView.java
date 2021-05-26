@@ -55,7 +55,7 @@ public class MainView extends JPanel {
         d.setLayout(new GridLayout(2,1,0,5));
         d.add(des);
         d.add(resul);
-        module.setLayout(new GridLayout(2,5,0,5));
+        module.setLayout(new GridLayout(5,2,0,5));
         for (ModuleFrame moduleFrame : modules) {
             module.add(moduleFrame);
         }
