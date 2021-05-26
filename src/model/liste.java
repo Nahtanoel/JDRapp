@@ -6,8 +6,8 @@ public class liste extends module {
     public liste(String nom){
         super(nom);
         this.elements = new HashMap<String,Boolean>();
-        this.elements.put("elem1", false);
-        this.elements.put("elem2", true);
+        this.elements.put("Potion magique", false);
+        this.elements.put("Parchemin magique sans magie", true);
     }
 
     public HashMap<String,Boolean> getElements(){
