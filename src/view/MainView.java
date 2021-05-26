@@ -2,6 +2,7 @@ package view;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import controler.*;
 public class MainView extends JPanel {
     
     private JButton d4;
@@ -16,7 +17,7 @@ public class MainView extends JPanel {
     private ArrayList<ModuleFrame> modules;
 
 
-    public MainView(ArrayList<CompteurFrame> modules,actionListener al){
+    public MainView(ArrayList<ModuleFrame> modules,actionListener al){
         this.al=al;
         this.initialiseComponents();
         this.modules = modules;
@@ -32,7 +33,7 @@ public class MainView extends JPanel {
         d20.addActionListener(al);
         resultat = new JLabel("resultat :");
 
-       ImageIcon menuIcon = new ImageIcon(this.getClass().getResource("menu.png"));
+        ImageIcon menuIcon = new ImageIcon(/*this.getClass().getResource("menu.png")*/);
         menu = new JButton("menu",menuIcon);
         JPanel haut = new JPanel();
         haut.setLayout(new BorderLayout());

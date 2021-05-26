@@ -3,8 +3,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-
-import model.dice;
+import model.*;
+import view.*;
 
 public class actionListener implements ActionListener {
     public controler controler;
@@ -54,7 +54,7 @@ public class actionListener implements ActionListener {
             controler.afficheMenu();
         }
         else if(paramActionEvent.getActionCommand().equals("gauche")){
-            controler.augementer(paramActionEvent.getSource());
+            controler.augementer((ModuleFrame) paramActionEvent.getSource());
         }
         else if(paramActionEvent.getActionCommand().equals("droite")){
             controler.afficheMenu();

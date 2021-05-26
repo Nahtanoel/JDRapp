@@ -1,7 +1,6 @@
 package view;
 import javax.swing.*;
-
-import controler.actionListener;
+import controler.*;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -20,7 +19,7 @@ public class View extends JFrame {
     public void initialiseComponents(){
 
         ArrayList<ModuleFrame> modules = new ArrayList<ModuleFrame>();
-        modules.add(new CompteurFrame("PV",al));
+        modules.add(new CompteurFrame("PV",al,1));
         principal = new MainView(modules,al);
         menu = new MenuView();
         add(principal);

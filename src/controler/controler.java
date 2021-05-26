@@ -29,7 +29,7 @@ public class controler {
     }
 
     public void augementer(ModuleFrame frame){
-        model.
+
     }
     public void decrease(){
 

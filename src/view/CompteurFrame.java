@@ -14,7 +14,8 @@ public class CompteurFrame extends ModuleFrame {
     private JLabel nom;
     private actionListener al;
 
-    public CompteurFrame(String nom,actionListener al){
+    public CompteurFrame(String nom,actionListener al,int id){
+        super();
         this.compt=new compteur(nom);
         this.compteur = new JPanel();
         this.gauche=new JButton("gauche");
