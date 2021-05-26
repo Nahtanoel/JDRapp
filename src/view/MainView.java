@@ -11,22 +11,28 @@ public class MainView extends JPanel {
     private JButton menu;
 
     private JLabel resultat;
+    private actionListener al;
 
     private ArrayList<ModuleFrame> modules;
 
 
-    public MainView(ArrayList<ModuleFrame> modules){
+    public MainView(ArrayList<CompteurFrame> modules,actionListener al){
+        this.al=al;
         this.initialiseComponents();
         this.modules = modules;
     }
     public void initialiseComponents(){
         d4= new JButton("4");
+        d4.addActionListener(al);
         d6= new JButton("6");
+        d6.addActionListener(al);
         d10= new JButton("10");
+        d10.addActionListener(al);
         d20= new JButton("20");
-        resultat = new JLabel(" resultat = ");
+        d20.addActionListener(al);
+        resultat = new JLabel("resultat :");
 
-        ImageIcon menuIcon = new ImageIcon("../data/image/menu.png");
+       ImageIcon menuIcon = new ImageIcon(this.getClass().getResource("menu.png"));
         menu = new JButton("menu",menuIcon);
         JPanel haut = new JPanel();
         haut.setLayout(new BorderLayout());
@@ -58,5 +64,14 @@ public class MainView extends JPanel {
         System.out.println("e");
 
 
+    }
+    public void setResultatText(String text){
+        if(text!=null){
+            this.resultat.setText(text);
+            this.repaint();
+        }
+    }
+    public void setValue(ModuleFrame frame, int x){
+        frame.setValue(x);
     }
 }
